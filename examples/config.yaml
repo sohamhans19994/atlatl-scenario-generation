@@ -1,0 +1,11 @@
+evolution:
+  N_generations: 10  # The maximum number of generations to search for a solution.
+  N_islands: 3  # How many independent populations to evolve.
+  N_convs: 3  # How many conversations per island.
+  N_seqs: 2  # How many turns per conversation.
+  N_reset_interval: 3  # How frequently to reset islands in generations.
+  N_reset: 2  # How many islands to reset. Lowest mean score islands are chosen.
+  N_top: 3  # How many starting parents to transfer to islands when reset.
+  N_parents: 3  # Maximum number of parents a conversation can have.
+  Pr_no_parents: 0.25  # Probability of a conversation having no parents.
+  N_emigrate: 3  # How many plans to emigrate to the next island after each island.

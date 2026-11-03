@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atlatl-scenario-generation"
+version = "0.1.0"
+description = "LLM-guided evolutionary generation and evaluation of AtlAtl scenarios"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Soham Hans" }]
+dependencies = [
+    "jinja2>=3.1",
+    "llama-index>=0.14.2",
+    "numpy>=2.0",
+    "openai>=1.0",
+    "pyyaml>=6.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scenario_generation*"]
+
+[tool.setuptools.package-data]
+"scenario_generation.mind_evolution" = [
+    "examples/*.json",
+    "prompts/*.txt",
+]
+"scenario_generation.scenario_evaluation" = ["prompts/*.txt"]
+
+# Local development: clone atlatl_ICT next to this repo, then run `uv sync`.
+#
+#   <parent>/
+#   ├── atlatl_ICT/
+#   └── atlatl-scenario-generation/
+#
+# Both are installed editable, so `server.*` and `models.*` from atlatl_ICT are
+# importable here and engine edits take effect without reinstalling.
+[dependency-groups]
+atlatl = ["atlatl-ict"]
+dev = ["pytest>=8"]
+
+[tool.uv]
+default-groups = ["atlatl", "dev"]
+
+[tool.uv.sources]
+atlatl-ict = { path = "../atlatl_ICT", editable = true }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="570" viewBox="0 0 1440 570" role="img" aria-labelledby="title desc">
+  <title id="title">Scenario generation and evolutionary evaluation pipeline</title>
+  <desc id="desc">A learning objective and expected strategy lead to example retrieval, high-level design, text map generation, AtlAtl simulation, checklist evaluation, and evolutionary feedback.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071525"/>
+      <stop offset="1" stop-color="#102c45"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#75acd8"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#000" flood-opacity="0.24"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 18px system-ui, -apple-system, sans-serif; letter-spacing: 1.8px; fill: #85b9e4; }
+      .heading { font: 700 34px system-ui, -apple-system, sans-serif; fill: #fff; }
+      .node-title { font: 700 22px system-ui, -apple-system, sans-serif; fill: #10243c; }
+      .node-copy { font: 400 16px system-ui, -apple-system, sans-serif; fill: #577087; }
+      .number { font: 700 16px system-ui, -apple-system, sans-serif; fill: #fff; }
+      .loop-title { font: 700 19px system-ui, -apple-system, sans-serif; fill: #fff; }
+      .loop-copy { font: 400 15px system-ui, -apple-system, sans-serif; fill: #bad0e2; }
+    </style>
+  </defs>
+
+  <rect width="1440" height="570" rx="28" fill="url(#background)"/>
+  <text class="eyebrow" x="64" y="57">RESEARCH PIPELINE</text>
+  <text class="heading" x="64" y="102">From training intent to behavior observed in simulation</text>
+
+  <g stroke="#75acd8" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M273 261 H310"/>
+    <path d="M527 261 H564"/>
+    <path d="M781 261 H818"/>
+    <path d="M1035 261 H1072"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <g transform="translate(56 154)">
+      <rect width="217" height="214" rx="20" fill="#fff"/>
+      <circle cx="34" cy="36" r="18" fill="#2d76b9"/>
+      <text class="number" x="34" y="42" text-anchor="middle">1</text>
+      <text class="node-title" x="26" y="86">Training intent</text>
+      <text class="node-copy" x="26" y="122">Learning objective</text>
+      <text class="node-copy" x="26" y="151">Expected strategy</text>
+      <text class="node-copy" x="26" y="180">Checklist questions</text>
+    </g>
+
+    <g transform="translate(310 154)">
+      <rect width="217" height="214" rx="20" fill="#fff"/>
+      <circle cx="34" cy="36" r="18" fill="#2d76b9"/>
+      <text class="number" x="34" y="42" text-anchor="middle">2</text>
+      <text class="node-title" x="26" y="86">Design</text>
+      <text class="node-copy" x="26" y="122">Retrieve related tasks</text>
+      <text class="node-copy" x="26" y="151">Reason about terrain</text>
+      <text class="node-copy" x="26" y="180">Plan forces and layout</text>
+    </g>
+
+    <g transform="translate(564 154)">
+      <rect width="217" height="214" rx="20" fill="#fff"/>
+      <circle cx="34" cy="36" r="18" fill="#2d76b9"/>
+      <text class="number" x="34" y="42" text-anchor="middle">3</text>
+      <text class="node-title" x="26" y="86">Instantiate</text>
+      <text class="node-copy" x="26" y="122">Serialize a text map</text>
+      <text class="node-copy" x="26" y="151">Validate its structure</text>
+      <text class="node-copy" x="26" y="180">Create a scenario file</text>
+    </g>
+
+    <g transform="translate(818 154)">
+      <rect width="217" height="214" rx="20" fill="#fff"/>
+      <circle cx="34" cy="36" r="18" fill="#725cb5"/>
+      <text class="number" x="34" y="42" text-anchor="middle">4</text>
+      <text class="node-title" x="26" y="86">Simulate</text>
+      <text class="node-copy" x="26" y="122">Run Blue and Red</text>
+      <text class="node-copy" x="26" y="151">through AtlAtl</text>
+      <text class="node-copy" x="26" y="180">Record both replays</text>
+    </g>
+
+    <g transform="translate(1072 154)">
+      <rect width="312" height="214" rx="20" fill="#fff"/>
+      <circle cx="34" cy="36" r="18" fill="#1e9b67"/>
+      <text class="number" x="34" y="42" text-anchor="middle">5</text>
+      <text class="node-title" x="26" y="86">Evaluate behavior</text>
+      <text class="node-copy" x="26" y="122">Inspect the initial map</text>
+      <text class="node-copy" x="26" y="151">Interpret the replay</text>
+      <text class="node-copy" x="26" y="180">Score every requirement</text>
+    </g>
+  </g>
+
+  <path d="M1228 385 V452 H418 V388" fill="none" stroke="#75acd8" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+  <g transform="translate(587 420)">
+    <rect width="472" height="112" rx="18" fill="#183c59" stroke="#386a8f" stroke-width="2"/>
+    <text class="loop-title" x="236" y="43" text-anchor="middle">Island-based evolutionary search</text>
+    <text class="loop-copy" x="236" y="73" text-anchor="middle">Select, critique, refine, migrate, and try again</text>
+  </g>
+</svg>

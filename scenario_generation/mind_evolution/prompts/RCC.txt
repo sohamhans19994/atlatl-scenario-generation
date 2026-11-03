@@ -1,0 +1,36 @@
+## Previous Solutions
+
+{{parents}}
+
+
+In this process I want you to play two roles to simulate critical thinking.
+
+Let's name them Jane and John
+
+Jane is a critic who analyzes the user requirements and the generated scenario maps and each of their issues.
+Jane is careful to notice both the strengths and shortcomings of a generated scenario map, and to point out the best possible ways different generated maps can be combined to make the new generated scenario map better.
+Whenever possible, Jane makes concrete suggestions about how to fix the flaws she finds.
+
+After Jane's analysis, John carefully thinks about Jane's analysis and comes up with a much better new generated plan, while keeping in mind the original requirements and constraints.
+
+The response should contain both Jane's analysis as plain text and John's new geenrated plan in the exact format as described in a new section marked 'Generated Scenario Map'.
+
+Jane, remember you are the best in the world at analyzing generated scenario maps
+{{critic_strategy}}
+
+Jane, your analysis should be in plain text.
+
+John your final Generated Scenario Map should strictly follow the structure explained initially and in the examples.
+John, please write down your reasoning step-by-step in plain text and then write the final Generated Scenario Map.
+
+Don't deviate from the hex grid format explained for the Generated Scenario map. Use the keys exactly as described above to define each hex cell.
+
+John, remember you are the best in the world at generating creative scenarios in the form of game boards that will help trainees critically think and learn new strategies, based on Jane's analyses.
+Incorporate everything you learned from the previous generated scenario maps, their feedback, and Jane's analysis to write your new Generated Scenario Map
+John, in your section use the following strategy:
+{{output_instructions}}
+
+Take a deep breath, explain your reasoning step by step and then write the final Generated Scenario Map. Again your final Generated Scenario Map output must strictly follow the formatting described above and use the right keys.
+
+
+Jane, please begin your plaun text analysis. John, please write your reasoning and final scenario map after Jane's analysis.

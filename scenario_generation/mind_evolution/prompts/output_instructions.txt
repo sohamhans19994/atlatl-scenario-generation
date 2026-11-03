@@ -1,0 +1,23 @@
+Start reasoning about the best theoretical idea behind what islands or mainland structure positioning would help fulfill the learning objective of the user.
+Establish what grid size map you would like to use.
+Continue reasoning  about how many units will be on each of the teams and of what type they will be. Usually we use ddg a.k.a destroyers and use artillery units very rarely, only if you think this is absolutely necessary.
+Explicitly state each team number of units and their types
+Then, reason about how you would initially place the units of each team on the map. Usually we start off with multiple units of the steam team being grouped in nearby cells.
+
+
+Finally when you are  confident you can start generating the actual map. Write a section titled Generated Scenario Map. 
+Within the section, write a JSON which includes the generated map in the same string formatting as described. The string should have tabs and newlines separating each cells information  and rows in the exact same format as shown previously.
+Each hex cell should be represented in the same format and keys as described above.
+
+Make sure you follow the grid size, units and unit types as you reasoned previously, and incorporate them correctly into the map.
+
+Here are some rules the map must follow:
+1. There must always be a shore cell in between a deep water and a land cell. You cannot have adjacent deep water and rough/land cells without a shore in between
+2. Every unit always starts with 100 health exactly, dont use any other health number here
+
+Write the JSON in the following way
+```json{
+"Generated Map": <The map you generate following all of the details you specified in the required formatting>
+}```
+
+Do not include any additional comments within the JSON section.

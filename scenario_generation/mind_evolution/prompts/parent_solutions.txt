@@ -1,0 +1,30 @@
+## Previous Solutions
+Here are some maps that were previously generated and the analyses of how they did
+
+{% for parent in parents %}
+Parent {{ loop.index }} — Score: {{ parent.score }}
+
+Map:
+{{ parent.generated_map_str }}
+
+Evaluation:
+{% set ev = parent.evaluation_result %}
+Initial map analysis: {{ ev.initial_map_analysis or 'N/A' }}
+Replay analysis: {{ ev.replay_analysis or 'N/A' }}
+
+Questions and answers:
+{% set qlen = questions | length %}
+{% for i in range(1, qlen + 1) %}
+Q{{ i }}: {{ questions[i - 1] }}
+{% set matches = ev.answers | selectattr('qid', 'equalto', i) | list %}
+{% if matches %}
+A{{ i }}: {{ 'Yes' if matches[0].answer else 'No' }} — {{ matches[0].reasoning }}
+{% else %}
+A{{ i }}: N/A
+{% endif %}
+{% endfor %}
+
+---
+{% else %}
+No parents.
+{% endfor %}

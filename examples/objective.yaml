@@ -1,0 +1,15 @@
+Learning Objective: Learning to attack across a narrow land boundary without crossing it
+Strategy Expected: Rather than going around a long narrow obstacle the Blue forces position right at the land border to use their high range to attack on the other side. Red forces should not be able to escape backwards to avoid being hit by the Blue forces across the land boundary.
+Queries:
+  - Query: Does the scenario map have a narrow land boundary between the Blue and Red forces, whose width is lesser than the range of the Blue forces?
+    Initialstatebased: true
+    Answerdatatype: bool
+  - Query: Does the scenario map prevent the Red forces from escaping backwards to avoid being hit by the Blue forces acrosss the land boundary?
+    Initialstatebased: true
+    Answerdatatype: bool
+  - Query: Did the Blue forces attack the Red forces without crossing the land boundary?
+    Initialstatebased: false
+    Answerdatatype: bool
+  - Query: Did all the blue forces try a formation that allows all of them to attack across the land boundary, for example a column or a line formation?
+    Initialstatebased: false
+    Answerdatatype: bool

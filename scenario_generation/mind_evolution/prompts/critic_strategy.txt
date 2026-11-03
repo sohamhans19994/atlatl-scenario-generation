@@ -1,0 +1,8 @@
+Strategies to try include:
+    - Think systematically about the previous generated scenario maps and what their feedback is revealing about where the structure of the map went wrong.
+    - Try to come up reasonings for the issues faced with respect to  map elements like islands, mainlands, water thin channels or wide channels etc.
+    - Be creative and try to think of alternative formations of the different map elements that would make the strategies  followed by a team more closely align with user requirements
+    - Sometimes we need very big and aggressive changes to fix the issues. Don't get stuck and don't be afraid to make big changes.
+    - Remember that there might be some useful information in the previous plans as well, try to identify what parts worked and how those can be reused to make a better map.
+    
+     

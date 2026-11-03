@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="690" viewBox="0 0 1440 690" role="img" aria-labelledby="title desc">
+  <title id="title">Adapting Google DeepMind's Mind Evolution to tactical scenario generation</title>
+  <desc id="desc">The generic Mind Evolution method evolves candidate solutions with evaluator feedback, critic and author refinement, and island populations. This project adapts those components to high-level scenario designs, textual hex maps, AtlAtl simulation, and map and replay checklist evaluation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071525"/>
+      <stop offset="1" stop-color="#12344e"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#82b7de"/>
+    </marker>
+    <style>
+      .eyebrow { font: 700 17px system-ui, sans-serif; letter-spacing: 1.6px; fill: #86bce6; }
+      .heading { font: 700 34px system-ui, sans-serif; fill: #fff; }
+      .panel-title { font: 700 25px system-ui, sans-serif; fill: #10243c; }
+      .panel-copy { font: 400 17px system-ui, sans-serif; fill: #577087; }
+      .box-title { font: 700 18px system-ui, sans-serif; fill: #10243c; }
+      .box-copy { font: 400 15px system-ui, sans-serif; fill: #577087; }
+      .adapt { font: 700 17px system-ui, sans-serif; letter-spacing: 1px; fill: #fff; }
+      .footer { font: 400 16px system-ui, sans-serif; fill: #a9c2d5; }
+    </style>
+  </defs>
+
+  <rect width="1440" height="690" rx="28" fill="url(#bg)"/>
+  <text class="eyebrow" x="58" y="55">METHODOLOGICAL LINEAGE</text>
+  <text class="heading" x="58" y="101">Mind Evolution, adapted for simulator-backed scenario search</text>
+
+  <g transform="translate(58 145)">
+    <rect width="548" height="466" rx="22" fill="#f7fafc" stroke="#7da5c2" stroke-width="2"/>
+    <text class="panel-title" x="28" y="49">Mind Evolution</text>
+    <text class="panel-copy" x="28" y="78">Lee et al., Google DeepMind, 2025</text>
+
+    <g transform="translate(28 112)">
+      <rect width="492" height="68" rx="14" fill="#eaf3fb"/>
+      <text class="box-title" x="20" y="28">Candidate solution</text>
+      <text class="box-copy" x="20" y="51">A complete proposed answer in natural-language space</text>
+    </g>
+    <g transform="translate(28 198)">
+      <rect width="492" height="68" rx="14" fill="#eaf3fb"/>
+      <text class="box-title" x="20" y="28">Evaluator</text>
+      <text class="box-copy" x="20" y="51">Returns a score, constraint checks, and textual feedback</text>
+    </g>
+    <g transform="translate(28 284)">
+      <rect width="492" height="68" rx="14" fill="#eaf3fb"/>
+      <text class="box-title" x="20" y="28">Refinement through Critical Conversation</text>
+      <text class="box-copy" x="20" y="51">Critic analyses guide an author toward a revised solution</text>
+    </g>
+    <g transform="translate(28 370)">
+      <rect width="492" height="68" rx="14" fill="#eaf3fb"/>
+      <text class="box-title" x="20" y="28">Evolutionary population</text>
+      <text class="box-copy" x="20" y="51">Selection, recombination, islands, migration, and resets</text>
+    </g>
+  </g>
+
+  <g>
+    <path d="M630 378 H799" stroke="#82b7de" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+    <rect x="641" y="329" width="145" height="48" rx="24" fill="#2d76b9"/>
+    <text class="adapt" x="713" y="359" text-anchor="middle">ADAPTED TO</text>
+  </g>
+
+  <g transform="translate(834 145)">
+    <rect width="548" height="466" rx="22" fill="#f7fafc" stroke="#59a985" stroke-width="2"/>
+    <text class="panel-title" x="28" y="49">AtlAtl scenario generation</text>
+    <text class="panel-copy" x="28" y="78">Domain-specific implementation in this repository</text>
+
+    <g transform="translate(28 112)">
+      <rect width="492" height="68" rx="14" fill="#e8f7ef"/>
+      <text class="box-title" x="20" y="28">Candidate scenario</text>
+      <text class="box-copy" x="20" y="51">A tactical design plus an exact textual hex map</text>
+    </g>
+    <g transform="translate(28 198)">
+      <rect width="492" height="68" rx="14" fill="#e8f7ef"/>
+      <text class="box-title" x="20" y="28">Simulator-backed evaluator</text>
+      <text class="box-copy" x="20" y="51">AtlAtl replay plus map- and behavior-based checklist checks</text>
+    </g>
+    <g transform="translate(28 284)">
+      <rect width="492" height="68" rx="14" fill="#e8f7ef"/>
+      <text class="box-title" x="20" y="28">Scenario critic and generator</text>
+      <text class="box-copy" x="20" y="51">RCC analyses map failures and proposes a revised design</text>
+    </g>
+    <g transform="translate(28 370)">
+      <rect width="492" height="68" rx="14" fill="#e8f7ef"/>
+      <text class="box-title" x="20" y="28">Scenario populations</text>
+      <text class="box-copy" x="20" y="51">The island search is retained for diverse map exploration</text>
+    </g>
+  </g>
+
+  <text class="footer" x="720" y="655" text-anchor="middle">This project applies the Mind Evolution method to a new domain; it does not introduce the underlying search algorithm.</text>
+</svg>

@@ -1,0 +1,242 @@
+[
+    {
+        "Learning Objective": "Learning to attack an enemy positioned beyond a central island by splitting the attacking force around both sides.",
+        "Strategy Expected": "Blue divides its force between the two navigable routes around the central island, keeps each group mutually supported, and times attacks from different directions so Red cannot defend against only one approach.",
+        "Map String": "w\t\t\t\tw\t\t\t\tw\t\t\t\tw\n\t\tw\t\t\t\tw100dr\t\t\t\tw\t\t\nw\t\t\t\tw\t\t\t\tw100dr\t\t\t\tw\n\t\tw\t\t\t\ts\t\t\t\tw\t\t\nw\t\t\t\ts\t\t\t\ts\t\t\t\tw\n\t\ts\t\t\t\tr\t\t\t\ts\t\t\nw\t\t\t\tr\t\t\t\tr\t\t\t\tw\n\t\ts\t\t\t\tr\t\t\t\ts\t\t\nw\t\t\t\ts\t\t\t\ts\t\t\t\tw\n\t\tw\t\t\t\ts\t\t\t\tw\t\t\nw\t\t\t\tw\t\t\t\tw\t\t\t\tw\n\t\tw100db\t\t\t\tw\t\t\t\tw\t\t\nw100db\t\t\t\tw\t\t\t\tw\t\t\t\tw\n\t\tw100db\t\t\t\tw\t\t\t\tw\t\t\n",
+        "Evaluation": {
+            "Analysis": {
+                "initial_map_analysis": "Looking at the initial map, the terrain consists of a large body of water (w) with a central landmass composed of rough (r) terrain surrounded by coast/shore (s) hexes. Blue starts with three destroyers at the bottom of the map, while Red has two destroyers positioned at the top. The central island's rough terrain blocks destroyer movement, but the surrounding water and coast hexes form a continuous ring, creating two distinct navigable routes around the island. This layout sets up a scenario where Blue can split its forces to approach Red from multiple directions, aligning with the learning objective."
+            },
+            "Queries": [
+                {
+                    "Query": "Does the central island separate Blue and Red while providing navigable routes around both sides?",
+                    "Initialstatebased": true,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "The central island consists of rough terrain that destroyers cannot enter, while continuous water and coast paths remain open around its left and right sides."
+                },
+                {
+                    "Query": "Can Blue use both routes to approach Red from meaningfully different directions?",
+                    "Initialstatebased": true,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "The two routes converge on Red from different sides of the island, giving Blue distinct approach vectors."
+                },
+                {
+                    "Query": "Did the Blue forces split and maneuver around different sides of the central island?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": false,
+                    "Reasoning": "Blue initially split toward both sides, but Red blocked the left passage and destroyed two Blue ships before they could complete the maneuver."
+                },
+                {
+                    "Query": "Did Blue attack Red from different directions within the same turn or one turn apart?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": false,
+                    "Reasoning": "Only the surviving right-side Blue ship attacked; Blue never coordinated attacks from both directions."
+                }
+            ]
+        }
+    },
+    {
+        "Learning Objective": "Learning to attack an enemy while securing and maintaining control of a city near the attacking force.",
+        "Strategy Expected": "Blue captures and protects the city near its starting island, leaves enough force to deny a Red counterattack, and sends the remaining ships through the open-water approach to engage Red near the mainland.",
+        "Map String": "r\t\t\t\tr\t\t\t\tr\t\t\t\ts\t\t\t\tw\n\t\tr\t\t\t\tr\t\t\t\ts\t\t\t\tw\t\t\t\tw\nr\t\t\t\tr\t\t\t\ts\t\t\t\tw\t\t\t\tw\n\t\tr\t\t\t\ts\t\t\t\tw\t\t\t\tw\t\t\t\tw\nr\t\t\t\ts\t\t\t\tw\t\t\t\tw\t\t\t\tw\n\t\ts\t\t\t\tw100dr\t\t\t\tw\t\t\t\tw\t\t\t\tw\ns\t\t\t\tw\t\t\t\tw100dr\t\t\t\tw\t\t\t\tw\n\t\tw\t\t\t\tw\t\t\t\tw\t\t\t\tw\t\t\t\tw\nw\t\t\t\tw\t\t\t\tw\t\t\t\tw\t\t\t\tw\n\t\tw\t\t\t\tw\t\t\t\tw\t\t\t\tw\t\t\t\tw\nw\t\t\t\tw\t\t\t\tw\t\t\t\tw\t\t\t\ts\n\t\tw\t\t\t\tw\t\t\t\tw\t\t\t\ts\t\t\t\ts\nw\t\t\t\tw\t\t\t\tw\t\t\t\tw\t\t\t\tr\n\t\tw\t\t\t\tw\t\t\t\ts\t\t\t\ts\t\t\t\ts\nw\t\t\t\tw\t\t\t\ts\t\t\t\ts\t\t\t\tr\n\t\tw\t\t\t\tw\t\t\t\tr\t\t\t\tu\t\t\t\ts\nw\t\t\t\tw\t\t\t\ts\t\t\t\tr\t\t\t\tr\n\t\tw\t\t\t\tw\t\t\t\tr\t\t\t\tr\t\t\t\ts100db\nw\t\t\t\tw\t\t\t\ts\t\t\t\ts\t\t\t\ts100db\n\t\tw\t\t\t\tw\t\t\t\ts\t\t\t\ts\t\t\t\ts100db\n",
+        "Evaluation": {
+            "Analysis": {
+                "initial_map_analysis": "Blue starts with three destroyers on the coast in the bottom-right corner beside a city, while Red starts with two destroyers in water near the upper-left mainland. A continuous water and coast route connects the forces. Blue can leave a unit to occupy and defend the nearby city while sending the remaining ships through open water to engage Red, making the layout well suited to learning how to balance territorial control with an attack."
+            },
+            "Queries": [
+                {
+                    "Query": "Does the map place a city near Blue while still providing a navigable route from Blue to Red?",
+                    "Initialstatebased": true,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "The city is adjacent to Blue's starting area, and continuous water and coast terrain connects that area to Red."
+                },
+                {
+                    "Query": "Can Blue defend the city and send a separate attacking group without either group being isolated by terrain?",
+                    "Initialstatebased": true,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "Blue has three ships, the city is accessible from the coast, and the broad water route lets the other ships advance without being cut off."
+                },
+                {
+                    "Query": "Did Blue gain and maintain control of the city while advancing toward or attacking Red?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "Blue occupied the city, destroyed the Red ship that entered it, and retained control while eliminating both Red ships."
+                },
+                {
+                    "Query": "Did Blue keep the city protected while using other units to pressure Red?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "At least one Blue ship remained in or beside the city while the other Blue ships moved and fired on Red."
+                }
+            ]
+        }
+    },
+    {
+        "Learning Objective": "Learning to fight a defensive enemy force among a cluster of islands with restricted movement.",
+        "Strategy Expected": "Blue forces must split up into individual units and attack Red from multiple fronts.",
+        "Map String": "w\t\t\t\ts\t\t\t\tw100db\t\t\t\tw100db\n\t\ts\t\t\t\ts\t\t\t\tw100db\t\t\nw\t\t\t\tr\t\t\t\ts\t\t\t\tw\n\t\ts\t\t\t\tr\t\t\t\tw\t\t\nw\t\t\t\tr\t\t\t\ts\t\t\t\tw\n\t\ts\t\t\t\ts\t\t\t\tw\t\t\nw\t\t\t\ts100dr\t\t\t\ts\t\t\t\tw\n\t\ts\t\t\t\ts\t\t\t\ts\t\t\ns\t\t\t\ts100dr\t\t\t\tr\t\t\t\ts\n\t\tr\t\t\t\ts\t\t\t\tr\t\t\ns\t\t\t\ts\t\t\t\tr\t\t\t\ts\n\t\ts\t\t\t\ts\t\t\t\ts\t\t\nw\t\t\t\tw\t\t\t\ts\t\t\t\tw\n\t\tw\t\t\t\tw\t\t\t\tw\t\t\n",
+        "Evaluation": {
+            "Analysis": {
+                "initial_map_analysis": "The starting map shows a central band of rough land (r) cells interspersed with many shore (s) hexes and surrounded by deep water (w). This creates multiple small island clusters and narrow littoral channels. Given movement rules, destroyers can only travel on w (2 per turn) and s (1 per turn) and cannot enter r, so the rough-land islands become hard barriers that restrict and canalize movement into chokepoints along the shore seams. Blue begins with three DDGs in deep water along the upper-right approaches; Red has two DDGs positioned on shore hexes deeper in the archipelago. Likely movement patterns: Blue must thread through shore channels on multiple axes (e.g., a central shore lane and an eastern/southern water approach) to reach Red\u2019s shore-anchored positions. Red can hold inshore chokepoints and use their firing range to interdict Blue\u2019s entry into the channels. The terrain thus supports the learning objective by encouraging Blue to split and probe distinct approaches while Red benefits from a defensive, inshore posture."
+            },
+            "Queries": [
+                {
+                    "Query": "Does the scenario map have a cluster of islands and restricts movement?",
+                    "Initialstatebased": true,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "The scenario map has a cluster of islands and restricts movement."
+                },
+                {
+                    "Query": "Did the Blue forces split up into units and take different channels?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": false,
+                    "Reasoning": "The scenario map does not have a cluster of islands and restricts movement."
+                },
+                {
+                    "Query": "Did the Blue units attack the Red forces from multiple fronts simultaneously, as in within the same or 1 turn difference?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": false,
+                    "Reasoning": "The scenario map does not have a cluster of islands and restricts movement."
+                },
+                {
+                    "Query": "Did the red forces remain in the defensive posture?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": false,
+                    "Reasoning": "The scenario map does not have a cluster of islands and restricts movement."
+                }
+            ]
+        }
+    },
+    {
+        "Learning Objective": "Learning to assault a defended coastline protected by mobile naval units and fixed shore artillery.",
+        "Strategy Expected": "Blue advances from open water in a mutually supporting formation, avoids presenting isolated targets, and concentrates its fire to suppress the fixed artillery and nearby Red defenders before closing on the coast.",
+        "Map String": "r\t\t\t\tr\t\t\t\tr\t\t\t\tr\n\t\tr\t\t\t\tu\t\t\t\tr\t\t\nr\t\t\t\tr100ar\t\t\t\ts\t\t\t\ts\n\t\ts100dr\t\t\t\ts100dr\t\t\t\ts\t\t\ns\t\t\t\ts\t\t\t\ts\t\t\t\ts\n\t\tw\t\t\t\tw\t\t\t\tw\t\t\nw\t\t\t\tw\t\t\t\tw\t\t\t\tw\n\t\tw\t\t\t\tw\t\t\t\tw\t\t\nw\t\t\t\tw\t\t\t\tw\t\t\t\tw\n\t\tw\t\t\t\tw\t\t\t\tw\t\t\nw\t\t\t\tw\t\t\t\tw\t\t\t\tw\n\t\tw\t\t\t\tw\t\t\t\tw\t\t\nw\t\t\t\tw100db\t\t\t\tw100db\t\t\t\tw\n\t\tw\t\t\t\tw100db\t\t\t\tw\t\t\n",
+        "Evaluation": {
+            "Analysis": {
+                "initial_map_analysis": "Blue starts with three destroyers in open water facing a coastline defended by two Red destroyers and fixed artillery positioned on rough terrain. The large open-water approach gives Blue room to maneuver into a mutually supporting formation before entering firing range. The layout encourages Blue to concentrate fire against the mobile coastal defenders and then suppress the artillery before closing on the shore."
+            },
+            "Queries": [
+                {
+                    "Query": "Does the initial map present Blue with a defended coastal approach containing both Red ships and fixed artillery?",
+                    "Initialstatebased": true,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "Red artillery occupies rough terrain immediately behind two Red destroyers positioned along the coast."
+                },
+                {
+                    "Query": "Does the open-water approach give Blue room to form a coordinated attack before entering Red firing range?",
+                    "Initialstatebased": true,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "Several rows of open water separate Blue from the coastal defense, providing maneuver space beyond the defenders' initial range."
+                },
+                {
+                    "Query": "Did Blue approach the coast in a mutually supporting formation rather than piecemeal?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "Blue initially advanced together and used multiple ships against the same target, although one ship later moved ahead of the group."
+                },
+                {
+                    "Query": "Did Blue concentrate enough fire to destroy or neutralize the shore artillery and break the coastal defense?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": false,
+                    "Reasoning": "The fixed Red artillery was never attacked and remained at full strength, so the coastal defense was not fully neutralized."
+                }
+            ]
+        }
+    },
+    {
+        "Learning Objective": "Learning to fight a defensive enemy force that is positioned on the other side of a chokepoint.",
+        "Strategy Expected": "Blue forces move in a coordinated manner through the chokepoint, so they dont get picked off one by one at the chokepoint. Being in a group will allow them to launch multiple attacks in quick succession and overpower the enemy.",
+        "Map String": "w100db\t\t\t\tw100db\t\t\t\tw\t\t\t\tw\n\t\tw100db\t\t\t\tw100db\t\t\t\tw\t\t\ns\t\t\t\tw\t\t\t\tw\t\t\t\ts\n\t\ts\t\t\t\tw\t\t\t\ts\t\t\nr\t\t\t\ts\t\t\t\ts\t\t\t\tr\n\t\tr\t\t\t\ts\t\t\t\tr\t\t\nr\t\t\t\tr\t\t\t\tr\t\t\t\tr\n\t\tr\t\t\t\ts\t\t\t\tr\t\t\ns\t\t\t\ts\t\t\t\ts\t\t\t\tr\n\t\ts\t\t\t\tw\t\t\t\ts\t\t\nw\t\t\t\tw\t\t\t\tw\t\t\t\ts\n\t\tw\t\t\t\tw100dr\t\t\t\tw\t\t\nw\t\t\t\tw\t\t\t\tw100dr\t\t\t\tw\n\t\tw\t\t\t\tw100dr\t\t\t\tw\t\t\n",
+        "Evaluation": {
+            "Analysis": {
+                "initial_map_analysis": "The map is a narrow 4-column, multi-row hex grid dominated by deep water (w) at the top and bottom, with a central belt of rough land (r) that blocks naval movement. Only coast/shore (s) hexes penetrate this rough belt, forming a very narrow, essentially single-hex-wide pass connecting the top waters to the bottom waters. Destroyers (d) can move on deep water at 2 per turn and on coast at 1 per turn, but cannot enter rough (r), so they are funneled through the coast corridor. Blue begins with four DDGs in the upper waters; Red has three DDGs in the lower waters on the far side of the narrow pass. Potential strategies: Blue should mass at the mouth of the chokepoint, stack sequentially to avoid piecemeal exposure, then push through together, leveraging range-2 fires to peek and volley as they break out. There is no true alternative water route; the r belt denies flanking and forces any approach to use the s corridor, making timing and cohesion critical. Red, defending the far side, can establish a kill zone at the exit of the chokepoint, using range-2 to punish the first Blue ship to emerge while maintaining standoff in deep water. The terrain clearly supports the learning objective by creating a chokepoint that rewards coordinated, simultaneous Blue movement and punishes single-file, staggered entries."
+            },
+            "Queries": [
+                {
+                    "Query": "Does the scenario map have a chokepoint that serverly bottlenecks movement?",
+                    "Initialstatebased": true,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "The central rough (r) belt blocks naval movement, leaving only a narrow sequence of coast (s) hexes connecting the upper and lower waters. Destroyers cannot enter rough and must use the s corridor at slower speed, creating a single-file chokepoint that severely constrains movement."
+                },
+                {
+                    "Query": "Did the Blue forces move aggresively to attack?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": false,
+                    "Reasoning": "Blue advanced slightly to the chokepoint mouth early, then halted and never fired. Across all phases, no attacks occurred and no further push was made, indicating the absence of aggressive action."
+                },
+                {
+                    "Query": "Did the Blue forces maintain a cohesive formation to advance through the chokepoint?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": false,
+                    "Reasoning": "Blue formed a small cluster near the entry but did not continue advancing through the chokepoint; they stalled and never executed the coordinated, sequential breakthrough envisioned by the objective. Thus they did not maintain a cohesive advancing formation through the chokepoint."
+                },
+                {
+                    "Query": "Did the red forces remain in the defensive posture?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "Red took no actions throughout the replay\u2014no movement and no firing\u2014remaining on the far side of the chokepoint in a static defensive posture."
+                }
+            ]
+        }
+    },
+    {
+        "Learning Objective": "Learning to maneuver a grouped force through a tight coastal channel without becoming strung out and defeated in detail.",
+        "Strategy Expected": "Blue keeps its destroyers close enough for mutual support while advancing through the diagonal channel, brings multiple ships into range together, and attacks Red in quick succession instead of exposing one lead ship alone.",
+        "Map String": "r\t\t\t\tr\t\t\t\tr\t\t\t\ts\n\t\tr\t\t\t\tr\t\t\t\ts\t\t\nr\t\t\t\tr\t\t\t\ts\t\t\t\tw100dr\n\t\tr\t\t\t\ts\t\t\t\tw100dr\t\t\nr\t\t\t\ts\t\t\t\tw\t\t\t\tw\n\t\ts\t\t\t\tw\t\t\t\tw\t\t\ns\t\t\t\tw\t\t\t\tw\t\t\t\tw\n\t\tw\t\t\t\tw\t\t\t\tw\t\t\nw100db\t\t\t\tw\t\t\t\tw\t\t\t\ts\n\t\tw100db\t\t\t\tw\t\t\t\ts\t\t\nw100db\t\t\t\tw\t\t\t\ts\t\t\t\tr\n\t\tw\t\t\t\ts\t\t\t\tr\t\t\nw\t\t\t\ts\t\t\t\tr\t\t\t\tr\n\t\tw\t\t\t\tr\t\t\t\tr\t\t\n",
+        "Evaluation": {
+            "Analysis": {
+                "initial_map_analysis": "The map forms a diagonal channel of water and coast running from Blue at the bottom-left to Red at the top-right. Rough land borders the corridor and restricts destroyer movement. Blue's three destroyers begin clustered at the channel entrance, while Red's two destroyers defend the far end. The geometry permits a compact, mutually supporting Blue advance but punishes ships that move too far ahead of the group."
+            },
+            "Queries": [
+                {
+                    "Query": "Does the map create a constrained coastal channel between land barriers for Blue to traverse toward Red?",
+                    "Initialstatebased": true,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "A diagonal water-and-coast corridor connects the forces and is bounded by rough terrain that destroyers cannot enter."
+                },
+                {
+                    "Query": "Do Blue starting positions and the channel geometry permit the force to advance as a compact group?",
+                    "Initialstatebased": true,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "Blue's ships begin together, and the lower part of the channel is wide enough for them to remain close while advancing."
+                },
+                {
+                    "Query": "Did Blue remain grouped and mutually supporting while moving through the channel?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": false,
+                    "Reasoning": "Blue initially moved together, but one ship later separated from the group and was isolated and destroyed by Red."
+                },
+                {
+                    "Query": "Did multiple Blue units attack Red in the same turn or within one turn of each other?",
+                    "Initialstatebased": false,
+                    "Answerdatatype": "bool",
+                    "Answer": true,
+                    "Reasoning": "All three Blue ships fired during the same Blue turn after entering range."
+                }
+            ]
+        }
+    }
+]

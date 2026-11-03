@@ -1,0 +1,27 @@
+.env
+.env.*
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+runs/
+logs/
+results/
+temp_replay/
+*.log
+
+# Generated AtlAtl replay and scenario artifacts
+*replay.js
+*.scn
+
+# Editor and operating-system files
+.DS_Store
+._*
+.idea/
+.vscode/
